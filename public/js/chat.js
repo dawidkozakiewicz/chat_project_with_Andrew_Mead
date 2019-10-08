@@ -21,9 +21,11 @@ const autoscroll = () => {
 
     // Height of the new message
     const newMessageStyles = getComputedStyle($newMessage)
+    console.log(newMessageStyles)
     const newMessageMargin = parseInt(newMessageStyles.marginBottom)
+    console.log(newMessageMargin)
     const newMessageHeight = $newMessage.offsetHeight + newMessageMargin
-
+    console.log(newMessageHeight)
     // Visible height
     const visibleHeight = $messages.offsetHeight
 
@@ -101,7 +103,7 @@ $sendLocationButton.addEventListener('click', () => {
             longitude: position.coords.longitude
         }, () => {
             $sendLocationButton.removeAttribute('disabled')
-            console.log('Location shared!')  
+            console.log('Location shared!')
         })
     })
 })

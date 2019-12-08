@@ -20,18 +20,17 @@ const autoscroll = () => {
     const $newMessage = $messages.lastElementChild
 
     // Height of the new message
-    const newMessageStyles = getComputedStyle($newMessage)
-    console.log(newMessageStyles)
-    const newMessageMargin = parseInt(newMessageStyles.marginBottom)
-    console.log(newMessageMargin)
-    const newMessageHeight = $newMessage.offsetHeight + newMessageMargin
-    console.log(newMessageHeight)
+    const newMessageStyles = getComputedStyle($newMessage) // all styles of the last message
+
+    const newMessageMargin = parseInt(newMessageStyles.marginBottom) // value of margin bottom of this message
+
+    const newMessageHeight = $newMessage.offsetHeight + newMessageMargin  // viewable height of this message plus margin bottom
+
     // Visible height
-    const visibleHeight = $messages.offsetHeight
+    const visibleHeight = $messages.offsetHeight // viewable height of div with all messages
 
     // Height of messages container
-    const containerHeight = $messages.scrollHeight
-
+    const containerHeight = $messages.scrollHeight  // entire height of
     // How far have I scrolled?
     const scrollOffset = $messages.scrollTop + visibleHeight
 
